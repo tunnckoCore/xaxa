@@ -48,7 +48,7 @@ jobs:
       - *restore_modules_cache
       - run:
           name: Releasing and publishing
-          command: yarn run release
+          command: yarn new-release
 
 workflows:
   version: 2

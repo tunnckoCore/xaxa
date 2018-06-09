@@ -8,7 +8,7 @@
     "lint": "xaxa",
     "test": "node -r esm test",
     "precommit": "yarn lint && yarn test && git status --porcelain && git add -A",
-    "commit": "gitcommit -xsS"
+    "commit": "gitcommit -sS"
   },
   "engines": {
     "node": "^8.9.0 || ^10.3.0"
