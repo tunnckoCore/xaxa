@@ -46,12 +46,28 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": "https://github.com/olstenlarck/xaxa",
+  "repository": "olstenlarck/xaxa",
   "homepage": "https://github.com/olstenlarck/xaxa",
   "author": "Charlike Mike Reagent",
   "license": "Apache-2.0",
+  "licenseStart": "2018",
   "private": false,
   "bin": {
     "xaxa": "src/cli.js"
+  },
+  "verb": {
+    "reflinks": [
+      "codecov-url",
+      "new-release",
+      "nodeversion-url",
+      "renovateapp-img",
+      "renovateapp-url",
+      "open-issue-url",
+      "renovate-img",
+      "renovate-url"
+    ],
+    "related": {
+      "list": []
+    }
   }
 }
