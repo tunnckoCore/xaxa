@@ -1,13 +1,15 @@
 {
   "name": "xaxa",
-  "version": "0.3.4",
+  "version": "0.0.0-new-release-placeholder",
   "description": "Zero-config linting, powered by few amazing unicorns, AirBnB & Prettier.",
   "main": "src/",
   "module": "src/index.mjs",
   "scripts": {
     "lint": "xaxa",
     "test": "node -r esm test",
-    "precommit": "yarn lint && yarn test && git status --porcelain && git add -A",
+    "precommit": "yarn lint && yarn test && yarn gitadd",
+    "gitadd": "git status --porcelain && git add -A",
+    "precommit-dry": "yarn gitadd",
     "commit-dry": "gitcommit -sS",
     "commit": "gitcommit -sS"
   },
