@@ -42,10 +42,10 @@ const output = argv.warnings
   ? format(report.results)
   : format(CLIEngine.getErrorResults(report.results));
 
-console.error(output);
-
 if (report.errorCount && !!argv.exit) {
+  console.error(output);
   process.exit(1);
 } else {
+  console.log(output);
   process.exit(0);
 }
