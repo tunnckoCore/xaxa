@@ -1,4 +1,4 @@
-import test from 'asia';
+const test = require('asia');
 
 test('xaxa', (t) => {
   console.log('yeah');

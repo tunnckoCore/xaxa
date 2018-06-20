@@ -22,6 +22,7 @@ if (argv.require) {
   require(argv.require);
 }
 
+// TODO: expose as API
 const cli = new CLIEngine({
   useEslintrc: false,
   cache: true,
