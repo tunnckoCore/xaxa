@@ -1,6 +1,6 @@
-const test = require('asia');
+const test = require('mukla');
 
-test('xaxa', (t) => {
+test('xaxa', (done) => {
   console.log('yeah');
-  t.pass();
+  done();
 });

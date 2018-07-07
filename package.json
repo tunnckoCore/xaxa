@@ -3,8 +3,9 @@
   "version": "0.0.0-new-release-placeholder",
   "description": "Zero-config linting, powered by few amazing unicorns, AirBnB & Prettier.",
   "main": "src/",
+  "module": "src/index.mjs",
   "scripts": {
-    "lint": "xaxa",
+    "lint": "node src/cli.js",
     "test": "node test",
     "precommit": "yarn lint && yarn test && yarn gitadd",
     "gitadd": "git status --porcelain && git add -A",
@@ -28,18 +29,18 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-unicorn": "^4.0.3",
+    "esm": "^3.0.63",
     "mri": "^1.1.1",
     "prettier": "^1.12.1",
     "prettier-eslint": "^8.8.1"
   },
   "devDependencies": {
-    "asia": "*",
     "gitcommit": "^1.0.7",
-    "new-release": "^4.0.1",
-    "xaxa": "*"
+    "mukla": "^0.4.9",
+    "new-release": "^4.0.1"
   },
   "eslintConfig": {
-    "extends": "./node_modules/xaxa/src/index.js"
+    "extends": "./src/index.js"
   },
   "publishConfig": {
     "access": "public"
