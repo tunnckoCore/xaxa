@@ -1,7 +1,7 @@
 export default {
   parser: 'babel-eslint',
   extends: ['airbnb', 'prettier', 'prettier/flowtype', 'prettier/react'],
-  plugins: ['unicorn', 'flowtype', 'node', 'prettier'],
+  plugins: ['promise', 'unicorn', 'flowtype', 'node', 'prettier'],
   rules: {
     // https://github.com/olstenlarck/xaxa/issues/2
     // Was changed in AirBnB v17, that's same as v16.
@@ -126,10 +126,26 @@ export default {
       },
     ],
 
-    // TODO: update
+    // TODO: use eslint resolvers
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'import/no-unresolved': 'off',
+
+    // PromisePlugin
+    'promise/catch-or-return': 'error',
+    'promise/no-return-wrap': 'error',
+    'promise/param-names': 'error',
+    'promise/always-return': 'warn',
+    'promise/no-native': 'off',
+    'promise/no-nesting': 'error',
+    'promise/no-promise-in-callback': 'off',
+    'promise/no-callback-in-promise': 'off',
+    'promise/avoid-new': 'off',
+    'promise/no-new-statics': 'error',
+    'promise/no-return-in-finally': 'error',
+    'promise/valid-params': 'error',
+    'promise/prefer-await-to-then': 'error',
+    'promise/prefer-await-to-callbacks': 'error',
 
     // Enforce throwing instead of `process.exit`.
     // https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/process-exit-as-throw.md
