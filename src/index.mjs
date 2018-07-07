@@ -3,10 +3,6 @@ export default {
   extends: ['airbnb', 'prettier', 'prettier/flowtype', 'prettier/react'],
   plugins: ['promise', 'unicorn', 'flowtype', 'node', 'prettier'],
   rules: {
-    // https://github.com/olstenlarck/xaxa/issues/2
-    // Was changed in AirBnB v17, that's same as v16.
-    'function-paren-newline': ['error', 'multiline'],
-
     // Enforce using named functions when regular function is used,
     // otherwise use arrow functions
     'func-names': ['error', 'always'],
