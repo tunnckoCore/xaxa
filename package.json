@@ -45,6 +45,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "esm": {
+    "await": true,
+    "mainFields": ["module", "main"]
+  },
   "repository": "olstenlarck/xaxa",
   "homepage": "https://github.com/olstenlarck/xaxa",
   "author": "Charlike Mike Reagent",
