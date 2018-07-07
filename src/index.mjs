@@ -2,6 +2,13 @@ export default {
   parser: 'babel-eslint',
   extends: ['airbnb', 'prettier', 'prettier/flowtype', 'prettier/react'],
   plugins: ['promise', 'unicorn', 'flowtype', 'node', 'prettier'],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.mjs', '.js', '.jsx'],
+      },
+    },
+  },
   rules: {
     // Enforce using named functions when regular function is used,
     // otherwise use arrow functions
@@ -122,10 +129,8 @@ export default {
       },
     ],
 
-    // TODO: use eslint resolvers
-    'import/extensions': 'off',
-    'import/no-extraneous-dependencies': 'off',
-    'import/no-unresolved': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/no-unresolved': ['error', { commonjs: true }],
 
     // PromisePlugin
     'promise/catch-or-return': 'error',
