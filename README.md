@@ -40,7 +40,7 @@ Project is [semantically](https://semver.org) & automatically released on [Circl
 - [License](#license)
 
 ## Install
-This project requires [**Node.js**][nodeversion-url] **^8.9.0 || ^10.6.0**. Install it using [**yarn**](https://yarnpkg.com) or [**npm**](https://npmjs.com).  
+This project requires [**Node.js**](https://nodejs.org) **^8.9.0 || ^10.6.0**. Install it using [**yarn**](https://yarnpkg.com) or [**npm**](https://npmjs.com).  
 _We highly recommend to use Yarn when you think to contribute to this project._
 
 ```bash

@@ -4,7 +4,7 @@
   "license": "Apache-2.0",
   "licenseStart": "2018",
   "scripts": {
-    "lint": "node src/cli.js",
+    "lint": "node cli.js",
     "test": "nyc --require esm asia",
     "gitadd": "git status --porcelain && git add -A",
     "commit-dry": "yarn gitadd && gitcommit -sS",
@@ -36,9 +36,10 @@
   },
   "files": [
     "src",
-    "dist"
+    "dist",
+    "cli.js"
   ],
-  "bin": "src/cli.js",
+  "bin": "cli.js",
   "main": "dist/index.js",
   "module": "src/index.js",
   "version": "0.0.0-semantically-released",

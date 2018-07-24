@@ -15,7 +15,7 @@ const esm = require('esm');
 const mri = require('mri');
 
 const esmRequire = esm(module);
-const { normalizeOptions, lintText, lintFiles } = esmRequire('./index');
+const { normalizeOptions, lintText, lintFiles } = esmRequire('./src/index');
 const { input, exit, warnings, extensions, reporter } = normalizeOptions();
 
 const argv = mri(proc.argv.slice(2), {
