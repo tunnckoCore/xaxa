@@ -1,80 +1,114 @@
 {
   "name": "xaxa",
-  "version": "0.0.0-new-release-placeholder",
   "description": "Zero-config linting, powered by few amazing unicorns, AirBnB & Prettier.",
-  "main": "src/",
-  "module": "src/index.mjs",
+  "license": "Apache-2.0",
+  "licenseStart": "2018",
   "scripts": {
     "lint": "node src/cli.js",
-    "test": "node test",
-    "precommit": "yarn lint && yarn test && yarn gitadd",
+    "test": "nyc --require esm asia",
     "gitadd": "git status --porcelain && git add -A",
-    "precommit-dry": "yarn gitadd",
-    "commit-dry": "gitcommit -sS",
-    "commit": "gitcommit -sS"
+    "commit-dry": "yarn gitadd && gitcommit -sS",
+    "precommit": "yarn lint && yarn test && yarn gitadd",
+    "commit": "gitcommit -sS",
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "ascjs src dist",
+    "prepublishOnly": "yarn build"
   },
   "engines": {
-    "node": "^8.9.0 || ^10.3.0"
+    "node": "^8.9.0 || ^10.6.0",
+    "npm": ">=5.5",
+    "yarn": ">=1.5"
   },
   "dependencies": {
     "arrayify": "^1.0.0",
-    "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-flowtype": "^2.46.3",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-react": "^7.8.2",
-    "eslint-plugin-unicorn": "^4.0.3",
-    "esm": "^3.0.63",
-    "mri": "^1.1.1",
-    "prettier": "^1.12.1",
-    "prettier-eslint": "^8.8.1"
+    "eslint-config-xaxa": "^1.0.3",
+    "esm": "^3.0.72",
+    "get-stdin": "^6.0.0",
+    "mri": "^1.1.1"
   },
   "devDependencies": {
-    "gitcommit": "^1.0.7",
-    "mukla": "^0.4.9",
-    "new-release": "^4.0.1"
+    "ascjs": "^2.4.0",
+    "asia": "^0.19.6",
+    "gitcommit": "^1.0.8",
+    "new-release": "^4.0.3",
+    "nyc": "^12.0.2"
   },
-  "eslintConfig": {
-    "extends": "./src/index.js"
-  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "bin": "src/cli.js",
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "version": "0.0.0-semantically-released",
+  "repository": "olstenlarck/xaxa",
+  "homepage": "https://github.com/olstenlarck/xaxa",
+  "author": "Charlike Mike Reagent (https://i.am.charlike.online)",
   "publishConfig": {
     "access": "public"
   },
-  "esm": {
-    "await": true,
-    "mainFields": [
-      "module",
-      "main"
+  "eslintConfig": {
+    "extends": "xaxa"
+  },
+  "renovate": {
+    "extends": "tunnckocore",
+    "packageRules": [
+      {
+        "packageNames": [
+          "eslint"
+        ],
+        "allowedVersions": "< 5"
+      }
     ]
   },
-  "repository": "olstenlarck/xaxa",
-  "homepage": "https://github.com/olstenlarck/xaxa",
-  "author": "Charlike Mike Reagent",
-  "license": "Apache-2.0",
-  "licenseStart": "2018",
-  "private": false,
-  "bin": {
-    "xaxa": "src/cli.js"
+  "nyc": {
+    "statements": 0,
+    "functions": 0,
+    "branches": 0,
+    "lines": 0,
+    "cache": true,
+    "check-coverage": true,
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "exclude": [
+      "test"
+    ],
+    "extension": [
+      ".js",
+      ".jsx",
+      ".mjs"
+    ]
   },
   "verb": {
-    "reflinks": [
-      "codecov-url",
-      "new-release",
-      "nodeversion-url",
-      "renovateapp-img",
-      "renovateapp-url",
-      "open-issue-url",
-      "renovate-img",
-      "renovate-url"
+    "run": true,
+    "toc": {
+      "render": true,
+      "method": "preWrite",
+      "maxdepth": 3,
+      "footer": ""
+    },
+    "layout": "empty",
+    "tasks": [
+      "readme"
     ],
     "related": {
-      "list": []
-    }
+      "list": [
+        "asia",
+        "gitcommit",
+        "new-release",
+        "xaxa",
+        "charlike"
+      ]
+    },
+    "lint": {
+      "reflinks": true
+    },
+    "reflinks": [
+      "new-release",
+      "semantic-release"
+    ]
   }
 }

@@ -1,6 +1,13 @@
-const test = require('mukla');
+/**
+ * @copyright 2018-present, Charlike Mike Reagent (https://i.am.charlike.online)
+ * @license Apache-2.0
+ */
 
-test('xaxa', (done) => {
-  console.log('yeah');
-  done();
+'use strict';
+
+import test from 'asia';
+import { normalizeOptions } from '../src/index';
+
+test('foo bar', (t) => {
+  t.ok(normalizeOptions());
 });

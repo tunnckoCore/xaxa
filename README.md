@@ -1,4 +1,4 @@
-# xaxa [![npm version][npmv-img]][npmv-url] [![github release][ghrelease-img]][ghrelease-url] [![License][license-img]][license-url]
+# xaxa [![npm version][npmv-img]][npmv-url] [![github release][ghrelease-img]][ghrelease-url] [![License][license-img]][license-url] [![Semantically Released][new-release-img]][new-release-url]
 
 <p align="center">
   <a href="https://github.com/olstenlarck/xaxa">
@@ -9,28 +9,39 @@
 
 > :star2:  Zero-config linting, powered by few amazing unicorns  :unicorn:, [AirBnB](https://github.com/airbnb/javascript) :revolving_hearts: & [Prettier](https://prettier.io/) :tada:
 
+<div id="thetop"></div>
+
 [![XAXA code style][codestyle-img]][codestyle-url]
-[![CircleCI linux build][linuxbuild-img]][linuxbuild-url] 
-[![CodeCov coverage status][codecoverage-img]][codecoverage-url] 
-[![DavidDM dependency status][dependencies-img]][dependencies-url] 
-[![Renovate App Status][renovateapp-img]][renovateapp-url] 
-[![Make A Pull Request][prs-welcome-img]][prs-welcome-url] 
+[![CircleCI linux build][linuxbuild-img]][linuxbuild-url]
+[![CodeCov coverage status][codecoverage-img]][codecoverage-url]
+[![DavidDM dependency status][dependencies-img]][dependencies-url]
+[![Renovate App Status][renovateapp-img]][renovateapp-url]
+[![Make A Pull Request][prs-welcome-img]][prs-welcome-url]
 
 If you have any _how-to_ kind of questions, please read the [Contributing Guide](./CONTRIBUTING.md) and [Code of Conduct](./CODE_OF_CONDUCT.md) documents.  
 For bugs reports and feature requests, [please create an issue][open-issue-url] or ping [@tunnckoCore](https://twitter.com/tunnckoCore) at Twitter.
 
 [![Conventional Commits][ccommits-img]][ccommits-url]
-[![PayPal Author Support][paypal-donate-img]][paypal-donate-url] 
-[![Share Love Tweet][share-love-img]][share-love-url] 
-[![NPM Downloads Weekly][downloads-weekly-img]][npmv-url] 
-[![NPM Downloads Monthly][downloads-monthly-img]][npmv-url] 
-[![NPM Downloads Total][downloads-total-img]][npmv-url] 
+[![PayPal Author Support][paypal-donate-img]][paypal-donate-url]
+[![Share Love Tweet][shareb]][shareu]
+[![NPM Downloads Weekly][downloads-weekly-img]][npmv-url]
+[![NPM Downloads Monthly][downloads-monthly-img]][npmv-url]
+[![NPM Downloads Total][downloads-total-img]][npmv-url]
 
-Project is [semantically](https://semver.org) & automatically released on [CircleCI][codecoverage-url] with [new-release][] and its [New Release](https://github.com/apps/new-release) Github App.
+Project is [semantically](https://semver.org) & automatically released on [CircleCI][codecoverage-url] with [new-release][] and its [New Release](https://github.com/apps/new-release) GitHub App.
+
+## Table of Contents
+- [Install](#install)
+- [API](#api)
+- [Related Projects](#related-projects)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
+- [Users](#users)
+- [License](#license)
 
 ## Install
-
-This project requires [**Node.js**][nodeversion-url] **^8.9.0 || ^10.3.0**. Install it using [**yarn**](https://yarnpkg.com).
+This project requires [**Node.js**][nodeversion-url] **^8.9.0 || ^10.6.0**. Install it using [**yarn**](https://yarnpkg.com) or [**npm**](https://npmjs.com).  
+_We highly recommend to use Yarn when you think to contribute to this project._
 
 ```bash
 $ yarn add xaxa --dev
@@ -38,7 +49,7 @@ $ yarn add xaxa --dev
 # or globally
 $ yarn global add xaxa
 
-# and just run it
+# then just run
 $ xaxa
 ```
 
@@ -46,67 +57,84 @@ $ xaxa
 
 **[back to top](#thetop)**
 
+## Related Projects
+Some of these projects are used here or were inspiration for this one, others are just related. So, thanks for your existance!
+- [asia](https://www.npmjs.com/package/asia): Blazingly fast, magical and minimalist testing framework, for Today and Tomorrow | [homepage](https://github.com/olstenlarck/asia#readme "Blazingly fast, magical and minimalist testing framework, for Today and Tomorrow")
+- [charlike](https://www.npmjs.com/package/charlike): Small, fast, simple and streaming project scaffolder for myself, but not… [more](https://github.com/tunnckoCore/charlike) | [homepage](https://github.com/tunnckoCore/charlike "Small, fast, simple and streaming project scaffolder for myself, but not only. Supports hundreds of template engines through the @JSTransformers API or if you want custom `render` function passed through options")
+- [gitcommit](https://www.npmjs.com/package/gitcommit): Lightweight and joyful `git commit` replacement. Conventional Commits compliant. | [homepage](https://github.com/tunnckoCore/gitcommit "Lightweight and joyful `git commit` replacement. Conventional Commits compliant.")
+- [new-release](https://www.npmjs.com/package/new-release): A stable alternative to [semantic-release][]. Only handles NPM publishing and nothing… [more](https://github.com/tunnckoCore/new-release#readme) | [homepage](https://github.com/tunnckoCore/new-release#readme "A stable alternative to [semantic-release][]. Only handles NPM publishing and nothing more. For creating GitHub releases use the Semantic Release GitHub App")
+- [xaxa](https://www.npmjs.com/package/xaxa): Zero-config linting, powered by few amazing unicorns, AirBnB & Prettier. | [homepage](https://github.com/olstenlarck/xaxa "Zero-config linting, powered by few amazing unicorns, AirBnB & Prettier.")
+
+**[back to top](#thetop)**
+
 ## Contributing
 Please read the [Contributing Guide](./CONTRIBUTING.md) and [Code of Conduct](./CODE_OF_CONDUCT.md) documents for advices.  
 For bugs reports and feature requests, [please create an issue][open-issue-url] or ping [@tunnckoCore](https://twitter.com/tunnckoCore) at Twitter.
+
+## Contributors
+Thanks to the hard work of [these wonderful people](./CONTRIBUTORS.md) this project is alive and it also follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification.  
+[Pull requests](https://github.com/tunnckoCore/contributing#opening-a-pull-request), stars and all kind of [contributions](https://opensource.guide/how-to-contribute/#what-it-means-to-contribute) are always welcome. :star2:
+
+## Users
+You can see who uses `xaxa` in the [USERS.md](./USERS.md) file. Please feel free adding this file if it not exists.  
+If you or your organization are using this project, consider adding yourself to the list of users.  
+**Thank You!** :heart:
 
 ## License
 Copyright (c) 2018-present, [Charlike Mike Reagent][author-link] `<olsten.larck@gmail.com>`.  
 Released under the [Apache-2.0 License][license-url].
 
-***
+---
 
-_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.7.0, on June 09, 2018._  
+_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.7.0, on July 25, 2018._
 
 <!-- Heading badges -->
 [npmv-url]: https://www.npmjs.com/package/xaxa
-[npmv-img]: https://img.shields.io/npm/v/xaxa.svg?label=npm%20version
+[npmv-img]: https://badgen.net/npm/v/xaxa?label=npm%20version
 
 [ghrelease-url]: https://github.com/olstenlarck/xaxa/releases/latest
-[ghrelease-img]: https://img.shields.io/github/release/olstenlarck/xaxa.svg?label=github%20release
+[ghrelease-img]: https://badgen.net/github/release/olstenlarck/xaxa?label=github%20release
 
 [license-url]: https://github.com/olstenlarck/xaxa/blob/master/LICENSE
-[license-img]: https://img.shields.io/badge/license-Apache%202.0-blue.svg
+[license-img]: https://badgen.net/npm/license/xaxa
 
 <!-- Front line badges -->
 
 [codestyle-url]: https://github.com/olstenlarck/xaxa
-[codestyle-img]: https://img.shields.io/badge/code_style-xaxa-brightgreen.svg
+[codestyle-img]: https://badgen.net/badge/code%20style/xaxa/green
 
 [linuxbuild-url]: https://circleci.com/gh/olstenlarck/xaxa/tree/master
-[linuxbuild-img]: https://img.shields.io/circleci/project/github/olstenlarck/xaxa/master.svg
+[linuxbuild-img]: https://badgen.net/circleci/github/olstenlarck/xaxa/master
 
 [codecoverage-url]: https://codecov.io/gh/olstenlarck/xaxa
-[codecoverage-img]: https://img.shields.io/codecov/c/github/olstenlarck/xaxa/master.svg
+[codecoverage-img]: https://codecov.io/gh/olstenlarck/xaxa/branch/master/graph/badge.svg
 
 [dependencies-url]: https://david-dm.org/olstenlarck/xaxa
-[dependencies-img]: https://img.shields.io/david/olstenlarck/xaxa.svg
+[dependencies-img]: https://badgen.net/david/dep/olstenlarck/xaxa
 
 [ccommits-url]: https://conventionalcommits.org/
-[ccommits-img]: https://img.shields.io/badge/conventional_commits-1.0.0-yellow.svg
+[ccommits-img]: https://badgen.net/badge/conventional%20commits/v1.0.0/dfb317
 
 [new-release-url]: https://github.com/tunnckoCore/new-release
-[new-release-img]: https://img.shields.io/badge/semantically-released-05C5FF.svg
+[new-release-img]: https://badgen.net/badge/semantically/released/05c5ff
 
-[downloads-weekly-img]: https://img.shields.io/npm/dw/xaxa.svg
-[downloads-monthly-img]: https://img.shields.io/npm/dm/xaxa.svg
-[downloads-total-img]: https://img.shields.io/npm/dt/xaxa.svg
-
-[nodeversion-url]: https://nodejs.org/en/download
-[nodeversion-img]: https://img.shields.io/node/v/xaxa.svg
+[downloads-weekly-img]: https://badgen.net/npm/dw/xaxa
+[downloads-monthly-img]: https://badgen.net/npm/dm/xaxa
+[downloads-total-img]: https://badgen.net/npm/dt/xaxa
 
 [renovateapp-url]: https://renovatebot.com
-[renovateapp-img]: https://img.shields.io/badge/renovate-enabled-brightgreen.svg
+[renovateapp-img]: https://badgen.net/badge/renovate/enabled/green
 
-[prs-welcome-img]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
+[prs-welcome-img]: https://badgen.net/badge/PRs/welcome/green
 [prs-welcome-url]: http://makeapullrequest.com
 
 [paypal-donate-url]: https://paypal.me/tunnckoCore/10
-[paypal-donate-img]: https://img.shields.io/badge/$-support-f47721.svg
+[paypal-donate-img]: https://badgen.net/badge/$/support/purple
 
-[share-love-url]: https://twitter.com/intent/tweet?text=https://github.com/olstenlarck/xaxa&via=tunnckoCore
-[share-love-img]: https://img.shields.io/badge/twitter-share-1da1f2.svg
+[shareu]: https://twitter.com/intent/tweet?text=https://github.com/olstenlarck/xaxa&via=tunnckoCore
+[shareb]: https://badgen.net/badge/twitter/share/1da1f2
 [open-issue-url]: https://github.com/olstenlarck/xaxa/issues/new
 [author-link]: https://i.am.charlike.online
 
 [new-release]: https://github.com/tunnckoCore/new-release
+[semantic-release]: https://github.com/semantic-release/semantic-release

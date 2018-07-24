@@ -1,78 +1,88 @@
 #!/usr/bin/env node
 
+/**
+ * @copyright 2018-present, Charlike Mike Reagent (https://i.am.charlike.online)
+ * @license Apache-2.0
+ */
+
+'use strict';
+
 const proc = require('process');
-const path = require('path');
-const mri = require('mri');
 const arrayify = require('arrayify');
 const { CLIEngine } = require('eslint');
+const getStdin = require('get-stdin');
+const esm = require('esm');
+const mri = require('mri');
+
+const esmRequire = esm(module);
+const { normalizeOptions, lintText, lintFiles } = esmRequire('./index');
+const { input, exit, warnings, extensions, reporter } = normalizeOptions();
 
 const argv = mri(proc.argv.slice(2), {
   default: {
-    fix: true,
-    exit: true,
-    warnings: false,
-    reporter: 'codeframe',
-    input: ['src', 'test'],
-    extensions: ['.mjs', '.js'],
+    stdin: false,
+    exit,
+    input,
+    reporter,
+    warnings,
+    extensions,
   },
-  array: ['extensions'],
+  string: ['reporter'],
+  boolean: ['exit', 'warnings', 'stdin'],
+  array: ['extensions', 'input'],
   alias: {
     x: 'extensions',
     w: 'warnings',
-    r: 'require',
     R: 'reporter',
   },
 });
 
-if (argv.require) {
-  /* eslint-disable-next-line global-require, import/no-dynamic-require */
-  require(argv.require);
-}
-
-const filename = (proc.mainModule && proc.mainModule.filename) || __filename;
-const dirname = path.dirname(filename);
-
-// TODO: expose as API
-const cli = new CLIEngine({
-  useEslintrc: false,
-  cache: true,
-  fix: argv.fix,
-  reportUnusedDisableDirectives: true,
-  configFile: path.join(dirname, 'index.js'),
-  extensions: arrayify(argv.extensions),
-  ignore: argv.ignore,
-});
-
 const patterns = arrayify(argv._.length ? argv._ : argv.input).filter(Boolean);
-
-const report = cli.executeOnFiles(patterns);
-
-if (report.results.length === 0) {
-  console.error('Error: no files to lint. Try adding "-x .mjs -x .js" flags');
+const onerror = (err) => {
+  console.error(err.stack);
   proc.exit(1);
-}
+};
 
-if (report.results.length > 0 && report.warningCount > 0 && !argv.warnings) {
-  CLIEngine.outputFixes(report);
-  console.log(
-    `No linting errors found, but there are ${report.warningCount} warnings!`,
-  );
-  console.log('Try running `xaxa --warnings` to see them.');
-  proc.exit(0);
-}
+if (argv.stdin) {
+  getStdin()
+    .then(async (str) => {
+      const report = await lintText(str, argv);
 
-const format = cli.getFormatter(argv.reporter);
-
-CLIEngine.outputFixes(report);
-
-const output = argv.warnings
-  ? format(report.results)
-  : format(CLIEngine.getErrorResults(report.results));
-
-if (report.errorCount && !!argv.exit) {
-  console.error(output);
-  proc.exit(1);
+      return report.results[0].output;
+    })
+    .then(console.log)
+    .catch(onerror);
 } else {
-  console.log(output);
-  proc.exit(0);
+  lintFiles(patterns, argv)
+    .then((report) => {
+      if (
+        report.results.length > 0 &&
+        report.errorCount === 0 &&
+        report.warningCount > 0 &&
+        !argv.warnings
+      ) {
+        console.log(
+          `No linting errors found, but there are ${
+            report.warningCount
+          } warnings!`,
+        );
+        console.log('Try running `xaxa --warnings` to see them.');
+        proc.exit(0);
+      }
+
+      const output = argv.warnings
+        ? report.format(report.results)
+        : report.format(CLIEngine.getErrorResults(report.results));
+
+      if (report.errorCount && !!argv.exit) {
+        console.error(output);
+        proc.exit(1);
+      } else {
+        console.log(output);
+        proc.exit(0);
+      }
+
+      return report;
+    })
+    .catch(onerror);
 }
