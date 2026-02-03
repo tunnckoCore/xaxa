@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "arrayify": "^1.0.0",
-    "eslint": "^4.19.1",
+    "eslint": "^9.26.0",
     "eslint-config-xaxa": "^1.0.3",
     "esm": "^3.0.72",
     "get-stdin": "^6.0.0",
